@@ -27,7 +27,7 @@ class CheckoutsController < ApplicationController
         }
       })
     rescue Conekta::ParameterValidationError => e
-      puts e.message_to_purchaser
+      puts e
       #alguno de los parámetros fueron inválidos
     rescue Conekta::ProcessingError => e
       puts e.message_to_purchaser
