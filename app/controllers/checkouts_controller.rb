@@ -1,5 +1,6 @@
 class CheckoutsController < ApplicationController
   skip_before_filter :verify_authenticity_token, :only => [:webhook]
+
   def index
   end
 
@@ -26,6 +27,7 @@ class CheckoutsController < ApplicationController
           type: 'oxxo'
         }
       })
+      puts @charge
     rescue Conekta::ParameterValidationError => e
       puts e
       #alguno de los parámetros fueron inválidos
